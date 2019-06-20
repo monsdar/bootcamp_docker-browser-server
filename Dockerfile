@@ -14,3 +14,4 @@ RUN cd /usr/local/ \
 
 # Expose port 8080 (docker-browser-server)
 EXPOSE :8080
+CMD docker-browser-server monsdar/bootcamp-baseimage -p 8080
