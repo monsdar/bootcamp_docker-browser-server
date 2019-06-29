@@ -12,6 +12,7 @@ RUN cd /usr/local/ \
     && sed -i "s#location\.host\+'/'#location.host + location.pathname.replace(/\\\/$/,'') + '/' #" /usr/lib/node_modules/docker-browser-server/web/bundle.js \
     && sed -i "s#/bundle#bundle#" /usr/lib/node_modules/docker-browser-server/web/index.html
 
-# Expose port 8080 (docker-browser-server)
+# Expose port 8080 (docker-browser-server) and 8441 (expose-fs)
 EXPOSE :8080
+EXPOSE :8441
 CMD docker-browser-server monsdar/bootcamp-baseimage -p 8080
